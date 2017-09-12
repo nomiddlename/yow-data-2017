@@ -60,7 +60,7 @@
 			<div class="slides">
 				<section data-background-image="images/shinesolutionslogo.png" data-background-position="bottom right" data-background-size="20%">
 					<h2>Image Recognition For Non-Experts</h2>
-					<h3>YOW! Data<br>18 Sept 2017</h3>
+					<h3>YOW! Data<br>19 Sept 2017</h3>
 					<p>
 						Gareth Jones - <a href="https://twitter.com/nomiddlename">@nomiddlename</a>
 					</p>
@@ -478,8 +478,781 @@
             How ad serving works
           </aside>
         </section>
+        <section>
+          <h2>Ad Breaches</h2>
+          <aside class="notes">
+            It's that last class of ads that cause the problems. They're not going to be relevant to a lot
+            of the audience, and in the worst case they could be offensive or harmful to the site's brand.
+            An example would be a Ford ad when Toyota is your sponsor, or an advert for alcohol or gambling on a
+            website for kids.
+          </aside>
+        </section>
+        <section>
+          <h2>Now</h2>
+          <ul>
+            <li class="fragment">Complaint</li>
+            <li class="fragment">Panic</li>
+            <li class="fragment">Fixed</li>
+          </ul>
+          <aside class="notes">
+            Sites provide a list of categories to exclude. Doesn't always work, it relies on the people
+            setting up the ads to use the right categories. Usually the first we will hear of an ad breach
+            is a complaint, or an embarrassing social media post. At best it will be an email from an internal
+            user. The next step in the process is for lots of people to panic. Once we get to this stage fixing
+            it is quite a quick process. But it's the finding out part that we want to improve.
+          </aside>
+        </section>
+        <section>
+          <h2>Proof Of Concept</h2>
+          <aside class="notes">
+            This was the work we did for The Telco Who Must Not Be Named. We were investigating whether we
+            could come up with an automated system for detecting ad breaches. And because we're shameless
+            followers of fashion, we wanted to use machine learning to do it.
+          </aside>
+        </section>
+        <section>
+          <svg
+             xmlns:xhtml="http://www.w3.org/1999/xhtml"
+             xmlns:dc="http://purl.org/dc/elements/1.1/"
+             xmlns:cc="http://creativecommons.org/ns#"
+             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:svg="http://www.w3.org/2000/svg"
+             xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+             xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+             xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+             width="611px"
+             height="323px"
+             version="1.1"
+             id="svg2"
+             inkscape:version="0.91 r13725"
+             sodipodi:docname="poc.svg">
+            <metadata
+               id="metadata70">
+              <rdf:RDF>
+                <cc:Work
+                   rdf:about="">
+                  <dc:format>image/svg+xml</dc:format>
+                  <dc:type
+                     rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                </cc:Work>
+              </rdf:RDF>
+            </metadata>
+            <sodipodi:namedview
+               pagecolor="#ffffff"
+               bordercolor="#666666"
+               borderopacity="1"
+               objecttolerance="10"
+               gridtolerance="10"
+               guidetolerance="10"
+               inkscape:pageopacity="0"
+               inkscape:pageshadow="2"
+               inkscape:window-width="1280"
+               inkscape:window-height="800"
+               id="namedview68"
+               showgrid="false"
+               inkscape:zoom="0.92962357"
+               inkscape:cx="202.77025"
+               inkscape:cy="75.443662"
+               inkscape:window-x="0"
+               inkscape:window-y="0"
+               inkscape:window-maximized="0"
+               inkscape:current-layer="svg2" />
+            <defs
+               id="defs4" />
+            <g
+               inkscape:groupmode="layer"
+               id="layer1"
+               inkscape:label="browser"
+               class="fragment">
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path8"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 88.7,82.27 0,-6.61 -16.23,0 0,-3.79 27.55,0 c 0.99,0 1.79,-0.73 1.79,-1.63 l 0,-68.1 c 0,-0.91 -0.8,-1.64 -1.79,-1.64 L 6.64,0.5 C 5.65,0.5 4.85,1.23 4.85,2.14 l 0,68.09 c 0,0.91 0.8,1.63 1.79,1.63 l 27.88,0 0,3.79 -16.22,0 0,6.61 -13.8,8.99 0,7.25 98,0 0,-7.25 -13.8,-8.98 z M 11.4,65.43 11.4,6.42 c 0,-0.78 0.69,-1.41 1.53,-1.41 l 80.43,0 c 0.85,0 1.54,0.63 1.54,1.41 l 0,59.01 c 0,0.78 -0.7,1.41 -1.54,1.41 l -80.42,0 c -0.85,0 -1.54,-0.64 -1.54,-1.41 z m -2.08,25.5 12.44,-8.03 63.48,0 12.42,8.03 -88.34,0 z" />
+              <rect
+                 style="fill:none;stroke:#ffb570"
+                 id="rect36"
+                 pointer-events="none"
+                 ry="7.1999998"
+                 rx="7.1999998"
+                 height="48"
+                 width="106"
+                 y="110.5"
+                 x="0.5" />
+              <g
+                 id="g38"
+                 transform="translate(2,114)">
+                <switch
+                   id="switch40">
+                  <foreignObject
+                     requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+                     height="40"
+                     width="102"
+                     pointer-events="all"
+                     style="overflow:visible;">
+                    <xhtml:div
+                       style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 153, 51); line-height: 1.2; vertical-align: top; width: 102px; white-space: normal; word-wrap: normal; text-align: center;">
+                      <xhtml:div
+                         style="display:inline-block;text-align:inherit;text-decoration:inherit;">Headless Browser</xhtml:div>
+                    </xhtml:div>
+                  </foreignObject>
+                  <text
+                     style="font-size:18px;font-family:Helvetica;text-anchor:middle;fill:#ff9933"
+                     id="text42"
+                     font-size="18px"
+                     y="29"
+                     x="51">Headless Browser</text>
+                </switch>
+              </g>
+            </g>
+            <g
+               inkscape:groupmode="layer"
+               id="layer2"
+               inkscape:label="screenshot"
+               class="fragment">
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path10"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 317.73,29.35 c 7.88,0 14.72,4.36 18.49,10.77 l 22.25,0.03 0,-12.11 c 0,-4.51 -3.61,-8.17 -8.04,-8.17 l -82.92,0 c -4.44,0 -8.01,3.66 -8.01,8.17 l 0.02,12.02 39.71,0.03 c 3.8,-6.4 10.61,-10.74 18.5,-10.74 z m -37.44,-13.31 -7.38,0 -0.85,2.69 8.84,0 -0.61,-2.69 z m 66.51,-1.45 -9.83,0 -1.73,4.17 13.16,0 -1.6,-4.17 z m -33.71,2.73 -8.44,0 0,-4.16 8.44,0 0,4.16 z m 7.76,-5.82 -23.87,0 -4.92,7.31 33.28,0 -4.49,-7.31 z m 16.52,30.8 c 1.23,2.76 1.96,5.78 1.96,9.01 0,12.12 -9.68,21.96 -21.6,21.96 -11.94,0 -21.61,-9.84 -21.61,-21.96 0,-3.22 0.72,-6.25 1.95,-9.02 l -38.57,0 0,33.07 c 0,4.49 3.57,8.14 8.02,8.14 l 82.92,0 c 4.43,0 8.04,-3.66 8.04,-8.14 l 0.02,-33.06 -21.13,0 z m -7.87,1.79 c -0.34,-0.61 -0.76,-1.18 -1.22,-1.73 -2.53,-3.08 -6.3,-5.11 -10.55,-5.11 -4.27,0 -8.04,2.02 -10.56,5.08 -0.46,0.56 -0.89,1.14 -1.26,1.76 -1.26,2.12 -2.03,4.56 -2.03,7.21 0,7.75 6.19,14.04 13.84,14.04 7.61,0 13.82,-6.3 13.82,-14.04 0,-2.64 -0.75,-5.09 -2.04,-7.21 z" />
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-width:2;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path18"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 124.5,34.5 60,0 0,-21 40,35 -40,35 0,-21 -60,0 0,-14 z" />
+              <rect
+                 style="fill:none;stroke:#ffb570"
+                 id="rect44"
+                 pointer-events="none"
+                 ry="3"
+                 rx="3"
+                 height="20"
+                 width="130"
+                 y="122.5"
+                 x="243.5" />
+              <g
+                 id="g46"
+                 transform="translate(262,123)">
+                <switch
+                   id="switch48">
+                  <foreignObject
+                     requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+                     height="19"
+                     width="92"
+                     pointer-events="all"
+                     style="overflow:visible;">
+                    <xhtml:div
+                       style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 153, 51); line-height: 1.2; vertical-align: top; width: 92px; white-space: nowrap; word-wrap: normal; text-align: center;">
+                      <xhtml:div
+                         style="display:inline-block;text-align:inherit;text-decoration:inherit;">Screenshot</xhtml:div>
+                    </xhtml:div>
+                  </foreignObject>
+                  <text
+                     style="font-size:18px;font-family:Helvetica;text-anchor:middle;fill:#ff9933"
+                     id="text50"
+                     font-size="18px"
+                     y="19"
+                     x="46">Screenshot</text>
+                </switch>
+              </g>
+            </g>
+            <g
+               inkscape:groupmode="layer"
+               id="layer3"
+               inkscape:label="queue"
+               class="fragment">
+              <rect
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-width:2"
+                 id="rect12"
+                 pointer-events="none"
+                 transform="matrix(0,1,-1,0,0,0)"
+                 ry="9"
+                 rx="9"
+                 height="60"
+                 width="321"
+                 y="-585"
+                 x="1" />
+              <path
+                 style="fill:none;stroke:#d79b00;stroke-width:2;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path14"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 585,33.1 -60,0 m 60,256.8 -60,0" />
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-width:2;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path20"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 394.5,35.5 60,0 0,-21 40,35 -40,35 0,-21 -60,0 0,-14 z" />
+              <rect
+                 style="fill:none;stroke:#ffb570"
+                 id="rect60"
+                 pointer-events="none"
+                 transform="matrix(0,1,-1,0,0,0)"
+                 ry="3"
+                 rx="3"
+                 height="20"
+                 width="90"
+                 y="-610.5"
+                 x="116.5" />
+              <g
+                 id="g62"
+                 transform="matrix(0,1,-1,0,609.5,134.5)">
+                <switch
+                   id="switch64">
+                  <foreignObject
+                     requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+                     height="19"
+                     width="54"
+                     pointer-events="all"
+                     style="overflow:visible;">
+                    <xhtml:div
+                       style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 153, 51); line-height: 1.2; vertical-align: top; width: 56px; white-space: nowrap; word-wrap: normal; text-align: center;">
+                      <xhtml:div
+                         style="display:inline-block;text-align:inherit;text-decoration:inherit;">Queue</xhtml:div>
+                    </xhtml:div>
+                  </foreignObject>
+                  <text
+                     style="font-size:18px;font-family:Helvetica;text-anchor:middle;fill:#ff9933"
+                     id="text66"
+                     font-size="18px"
+                     y="19"
+                     x="27">Queue</text>
+                </switch>
+              </g>
+            </g>
+            <g
+               inkscape:groupmode="layer"
+               id="layer4"
+               inkscape:label="cloudvision"
+               class="fragment">
+              <image
+                 id="image16"
+                 pointer-events="none"
+                 xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMTI4IDEyOCI+CiAgPHRpdGxlPkNsb3VkIFZpc2lvbiBBUEk8L3RpdGxlPgogIDxnPgogICAgPHBhdGggZD0iTTEyNi40Nyw1OC4xMmwtMjYuMy00NS43NEExMS41NiwxMS41NiwwLDAsMCw5MC4zMSw2LjVIMzcuN2ExMS41NSwxMS41NSwwLDAsMC05Ljg2LDUuODhMMS41Myw1OGExMS40OCwxMS40OCwwLDAsMCwwLDExLjQ0bDI2LjMsNDZhMTEuNzcsMTEuNzcsMCwwLDAsOS44Niw2LjA5SDkwLjNhMTEuNzMsMTEuNzMsMCwwLDAsOS44Ny02LjA2bDI2LjMtNDUuNzRBMTEuNzMsMTEuNzMsMCwwLDAsMTI2LjQ3LDU4LjEyWiIgc3R5bGU9ImZpbGw6ICM0Mjg1ZjQiLz4KICAgIDxwYXRoIGQ9Ik05NCw2NCw2NCw0Ni4zMywzNCw2NGw1Ny40MSw1Ny40MWExMS45MiwxMS45MiwwLDAsMCw4Ljc1LTZMMTE2LjcsODYuN1oiIHN0eWxlPSJvcGFjaXR5OiAwLjA3MDAwMDAwMDI5ODAyMztpc29sYXRpb246IGlzb2xhdGUiLz4KICAgIDxwYXRoIGQ9Ik02NCw0MS41LDM0LDY0LDY0LDg2LjUsOTQsNjRaTTQ1LjI1LDY0LDY0LDUwLjg4LDgyLjc1LDY0LDY0LDc3LjEzWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgIDxjaXJjbGUgY3g9IjY0LjAyIiBjeT0iNjQiIHI9IjUuNjIiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgPC9nPgo8L3N2Zz4K"
+                 height="128"
+                 width="128"
+                 y="171"
+                 x="244" />
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-width:2;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path22"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 494.5,249.5 -60,0 0,21 -40,-35 40,-35 0,21 60,0 0,14 z" />
+              <rect
+                 style="fill:none;stroke:#ffb570"
+                 id="rect52"
+                 pointer-events="none"
+                 ry="3"
+                 rx="3"
+                 height="20"
+                 width="160"
+                 y="299.5"
+                 x="229.5" />
+              <g
+                 id="g54"
+                 transform="translate(242,300)">
+                <switch
+                   id="switch56">
+                  <foreignObject
+                     requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+                     height="19"
+                     width="134"
+                     pointer-events="all"
+                     style="overflow:visible;">
+                    <xhtml:div
+                       style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 153, 51); line-height: 1.2; vertical-align: top; width: 136px; white-space: nowrap; word-wrap: normal; text-align: center;">
+                      <xhtml:div
+                         style="display:inline-block;text-align:inherit;text-decoration:inherit;">Cloud Vision API</xhtml:div>
+                    </xhtml:div>
+                  </foreignObject>
+                  <text
+                     style="font-size:18px;font-family:Helvetica;text-anchor:middle;fill:#ff9933"
+                     id="text58"
+                     font-size="18px"
+                     y="19"
+                     x="67">Cloud Vision API</text>
+                </switch>
+              </g>
+            </g>
+            <g
+               inkscape:groupmode="layer"
+               id="layer5"
+               inkscape:label="email"
+               class="fragment">
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-width:2;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path24"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 224.5,249.5 -60,0 0,21 -40,-35 40,-35 0,21 60,0 0,14 z" />
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path26"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 70.42,212.18 12.61,0 -5.9,31.66 c -0.54,2.26 -1.75,7.32 0.94,7.32 5.64,0 12.48,-5.99 12.48,-20.23 0,-21.29 -14.77,-32.2 -35.18,-32.2 -22.27,0 -36.51,15.57 -36.51,37.39 0,23.28 16.12,37.12 38.8,37.12 10.07,0 18.81,-2.93 25.37,-7.85 l 13.17,0 C 86.66,278.44 72.96,285.5 56.59,285.5 27.99,285.5 4.5,265 4.5,236.13 c 0,-28.35 22.95,-49.63 51.28,-49.63 23.64,0 46.72,15.57 46.72,40.19 0,30.47 -25.24,38.45 -33.15,38.45 -4.98,0 -8.19,-2.26 -8.33,-6.51 l -0.27,0 c -2.69,3.59 -6.86,6.65 -12.89,6.65 -11.56,0 -22.15,-10.91 -22.15,-24.08 0,-15.57 10.6,-30.34 26.99,-30.34 6.84,0 12.48,2.26 16.5,7.71 l 1.22,-6.39 z m -5.11,23.81 c 0,-6.38 -4.15,-10.77 -10.6,-10.77 -7.78,0 -13.29,6.92 -13.29,13.83 0,6.12 3.63,10.91 10.21,10.91 8.32,0 13.68,-6.38 13.68,-13.97 z" />
+              <rect
+                 style="fill:none;stroke:#ffb570"
+                 id="rect28"
+                 pointer-events="none"
+                 ry="3"
+                 rx="3"
+                 height="20"
+                 width="90"
+                 y="300.5"
+                 x="8.5" />
+              <g
+                 id="g30"
+                 transform="translate(30,301)">
+                <switch
+                   id="switch32">
+                  <foreignObject
+                     requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+                     height="19"
+                     width="46"
+                     pointer-events="all"
+                     style="overflow:visible;">
+                    <xhtml:div
+                       style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 153, 51); line-height: 1.2; vertical-align: top; width: 46px; white-space: nowrap; word-wrap: normal; text-align: center;">
+                      <xhtml:div
+                         style="display:inline-block;text-align:inherit;text-decoration:inherit;">Email</xhtml:div>
+                    </xhtml:div>
+                  </foreignObject>
+                  <text
+                     style="font-size:18px;font-family:Helvetica;text-anchor:middle;fill:#ff9933"
+                     id="text34"
+                     font-size="18px"
+                     y="19"
+                     x="23">Email</text>
+                </switch>
+              </g>
+            </g>
+          </svg>
+          <aside class="notes">
+            Diagram of the POC process.
+          </aside>
+        </section>
+        <section>
+          <h2>Google Cloud Vision</h2>
+          <ul>
+            <li class="fragment">Managed service</li>
+            <li class="fragment">OCR, Logo detection</li>
+            <li class="fragment">Objects, faces, landmarks</li>
+            <li class="fragment">Inappropriate content</li>
+          </ul>
+        </section>
+        <section>
+          <h2>HTTP Request</h2>
+          <aside class="notes">
+            an example http request showing ocr, logo and object detection
+          </aside>
+        </section>
+        <section>
+          <h2>Example Screenshot</h2>
+          <img src="images/poc-screenshot.jpg">
+          <aside class="notes">
+            an example of a typical ad breach test screenshot
+          </aside>
+        </section>
+        <section>
+          <h2>HTTP Response</h2>
+          <pre><code data-trim data-noescape class="json">
+            {
+              "faceAnnotations": [
+                {
+                  "boundingPoly": {
+                    "vertices": [
+                      {
+                        "x": 307,
+                        "y": 921
+                      },
+                      {
+                        "x": 364,
+                        "y": 921
+                      },
+                      ...
+</code></pre>
+          <aside class="notes">
+            an example of the kind of response you get back
+          </aside>
+        </section>
+        <section>
+          <h2>Face Detection</h2>
+          <img src="images/face-recognition.png">
+          <aside class="notes">
+            not used in our code, but interesting
+          </aside>
+        </section>
+        <section>
+          <h2>Inappropriate Content</h2>
+          <img src="images/safe-search.png">
+          <aside class="notes">
+            I'm not going to test this, but you can see here that this image is safe.
+          </aside>
+        </section>
+        <section>
+          <h2>OCR</h2>
+          <img src="images/ocr.png">
+          <aside class="notes">
+            Show the text found in the Image
+          </aside>
+        </section>
+        <section>
+          <h2>Keywords</h2>
+          <aside class="notes">
+            We set up a list of keywords that would trigger an alert if any of them were found
+            in the response from the Cloud Vision API.
+          </aside>
+        </section>
+        <section>
+          <h2>Cloud Vision Advantages</h2>
+          <ul>
+            <li class="fragment">managed</li>
+            <li class="fragment">expertise</li>
+            <li class="fragment">easy</li>
+          </ul>
+          <aside class="notes">
+            There's no servers to set up or look after.
+            Same technology that google uses in safe search, run by people much smarter than me.
+            Probably smarter than you, too.
+            It's easy - a http request and you're done.
+          </aside>
+        </section>
+        <section>
+          <h2>Cloud Vision Disadvantages</h2>
+          <ul>
+            <li class="fragment">Cost</li>
+            <li class="fragment">Not flexible</li>
+            <li class="fragment">Can't be used offline</li>
+          </ul>
+          <aside class="notes">
+            It's cheap, but costs can mount up - cost calc for the POC goes here
+          </aside>
+        </section>
+        <section>
+          <h2>POC Problems</h2>
+          <ul>
+            <li class="fragment">Cost</li>
+            <li class="fragment">Keywords</li>
+          </ul>
+          <aside class="notes">
+            For one site, and a very coarse sampling rate, it's not so bad. [calculations]
+            Relies on us using the same keywords as Google, and that Google have all the logos
+            and brand images of Australian companies.
+          </aside>
+        </section>
+        <section>
+          <h2>Solution</h2>
+          <p>Train our own image classifier!</p>
+        </section>
+        <section>
+          <h2>Too Hard</h2>
+          <p>It'll take weeks and millions of images</p>
+        </section>
+        <section>
+          <h2>Give Up!</h2>
+          <aside class="notes">
+            A sensible option.
+          </aside>
+        </section>
+        <section>
+          <h2>Steal<sup>*</sup> Someone Else's Work!</h2>
+          <p class="fragment"><sup>*</sup>Make use of work freely given for the advancement of humanity</p>
+          <aside class="notes">
+            A much better idea.
+          </aside>
+        </section>
+        <section>
+          <h2>Tensorflow</h2>
+          <aside class="notes">
+            Tensorflow - open source machine learning library. Backed by Google, other libraries
+            are out there. Keras can use tensorflow as a backend. Comes with support for a few
+            different image recognition models, but we're going to use the best of them.
+          </aside>
+        </section>
+        <section>
+          <h2>Inception V3</h2>
+          <img src="images/inceptionv3.png">
+          <aside class="notes">
+            Here's a diagram which shows you how the model works. Simple, huh?
+            Each of those blocks is layer in the neural network, with different numbers of nodes.
+            So there's a whole lot of coefficients that get tweaked during training, and at the end
+            these two layers here boil them down to classifications for the images.
+          </aside>
+        </section>
+        <section>
+          <h2>How to do it</h2>
+          <p class="fragment">
+            <img src="images/tutorial.png">
+            <a href="https://www.tensorflow.org/tutorials/image_retraining">https://www.tensorflow.org/tutorials/image_retraining</a>
+          </p>
+        </section>
+        <section>
+          <h3>Simpler Diagram</h3>
+          <svg
+             xmlns:dc="http://purl.org/dc/elements/1.1/"
+             xmlns:cc="http://creativecommons.org/ns#"
+             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:svg="http://www.w3.org/2000/svg"
+             xmlns="http://www.w3.org/2000/svg"
+             xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+             xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+             width="660px"
+             height="292px"
+             version="1.1"
+             id="svg2"
+             inkscape:version="0.91 r13725"
+             sodipodi:docname="inception.svg">
+            <metadata
+               id="metadata34">
+              <rdf:RDF>
+                <cc:Work
+                   rdf:about="">
+                  <dc:format>image/svg+xml</dc:format>
+                  <dc:type
+                     rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                </cc:Work>
+              </rdf:RDF>
+            </metadata>
+            <sodipodi:namedview
+               pagecolor="#ffffff"
+               bordercolor="#666666"
+               borderopacity="1"
+               objecttolerance="10"
+               gridtolerance="10"
+               guidetolerance="10"
+               inkscape:pageopacity="0"
+               inkscape:pageshadow="2"
+               inkscape:window-width="1280"
+               inkscape:window-height="800"
+               id="namedview32"
+               showgrid="false"
+               inkscape:zoom="1.2106061"
+               inkscape:cx="251.93993"
+               inkscape:cy="146.08956"
+               inkscape:window-x="0"
+               inkscape:window-y="0"
+               inkscape:window-maximized="0"
+               inkscape:current-layer="svg2" />
+            <defs
+               id="defs4" />
+            <g
+               inkscape:groupmode="layer"
+               id="layer1"
+               inkscape:label="image"
+               style="display:inline"
+               class="fragment">
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path8"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 58.73,31.35 c 7.88,0 14.72,4.36 18.49,10.77 l 22.25,0.03 0,-12.11 c 0,-4.51 -3.61,-8.17 -8.04,-8.17 l -82.92,0 c -4.44,0 -8.01,3.66 -8.01,8.17 l 0.02,12.02 39.71,0.03 c 3.8,-6.4 10.61,-10.74 18.5,-10.74 z m -37.44,-13.31 -7.38,0 -0.85,2.69 8.84,0 -0.61,-2.69 z m 66.51,-1.45 -9.83,0 -1.73,4.17 13.16,0 -1.6,-4.17 z m -33.71,2.73 -8.44,0 0,-4.16 8.44,0 0,4.16 z m 7.76,-5.82 -23.87,0 -4.92,7.31 33.28,0 -4.49,-7.31 z m 16.52,30.8 c 1.23,2.76 1.96,5.78 1.96,9.01 0,12.12 -9.68,21.96 -21.6,21.96 -11.94,0 -21.61,-9.84 -21.61,-21.96 0,-3.22 0.72,-6.25 1.95,-9.02 l -38.57,0 0,33.07 c 0,4.49 3.57,8.14 8.02,8.14 l 82.92,0 c 4.43,0 8.04,-3.66 8.04,-8.14 l 0.02,-33.06 -21.13,0 z m -7.87,1.79 c -0.34,-0.61 -0.76,-1.18 -1.22,-1.73 -2.53,-3.08 -6.3,-5.11 -10.55,-5.11 -4.27,0 -8.04,2.02 -10.56,5.08 -0.46,0.56 -0.89,1.14 -1.26,1.76 -1.26,2.12 -2.03,4.56 -2.03,7.21 0,7.75 6.19,14.04 13.84,14.04 7.61,0 13.82,-6.3 13.82,-14.04 0,-2.64 -0.75,-5.09 -2.04,-7.21 z" />
+            </g>
+            <g
+               inkscape:groupmode="layer"
+               id="layer2"
+               inkscape:label="science"
+               style="display:inline"
+               class="fragment">
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path10"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 290.52,89.41 c 7.18,-6.69 11.72,-16.12 11.72,-26.63 0,-12.95 -6.87,-24.63 -17.55,-31.2 l 11.97,-20.51 -1.88,-1.08 2.96,-5.08 -7.75,-4.41 -2.96,5.07 -1.99,-1.12 -29.42,50.45 2.58,1.47 -3.65,6.25 6.46,3.69 3.65,-6.25 2.57,1.47 12.37,-21.23 c 7.6,4.79 12.46,13.18 12.46,22.47 0,14.7 -12.07,26.63 -26.91,26.63 -9.93,0 -21.68,0 -21.68,0 l 0,10.1 61.03,0 0,-10.09 c -0.01,0 -9.04,0 -13.98,0 z" />
+              <path
+                 style="fill:#ffffff;stroke:#ffb570;stroke-width:2;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path26"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 110.5,49.5 0,-4.5 q 0,-4.5 10,-4.5 l 60,0 q 10,0 10,-10 l 0,-5.5 q 0,-5.5 5.55,2.82 l 8.9,13.36 q 5.55,8.32 0,16.64 l -8.9,13.36 Q 190.5,79.5 190.5,69.5 l 0,-5.5 q 0,-5.5 -10,-5.5 l -60,0 q -10,0 -10,-4.5 z" />
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path14"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 419.5,49.5 c 0,-6.78 -10.53,-11.78 -24.54,-14.47 1.14,-3.31 2.09,-6.52 2.74,-9.5 2.17,-9.98 1.13,-16.78 -2.95,-19.15 C 393.74,5.8 392.57,5.5 391.29,5.5 385.73,5.5 377.97,11.15 370,20.44 362.03,11.14 354.27,5.5 348.71,5.5 c -1.28,0 -2.45,0.3 -3.46,0.89 -5.83,3.38 -4.86,15.07 -0.17,28.65 -14.04,2.67 -24.58,7.68 -24.58,14.46 0,6.77 10.53,11.77 24.54,14.46 -1.15,3.31 -2.09,6.52 -2.74,9.5 -2.16,9.99 -1.13,16.79 2.95,19.15 1.01,0.59 2.18,0.89 3.46,0.89 5.57,0 13.33,-5.65 21.29,-14.94 7.97,9.29 15.73,14.94 21.29,14.94 1.29,0 2.45,-0.3 3.46,-0.89 4.08,-2.36 5.12,-9.16 2.95,-19.15 -0.65,-2.98 -1.59,-6.19 -2.74,-9.5 14.01,-2.68 24.54,-7.69 24.54,-14.46 z M 391.29,8.07 c 0.83,0 1.57,0.19 2.18,0.54 2.99,1.73 3.62,7.69 1.73,16.37 -0.66,3.01 -1.61,6.23 -2.79,9.59 -4.12,-0.69 -8.5,-1.19 -12.96,-1.49 -2.55,-3.87 -5.16,-7.42 -7.76,-10.62 7.51,-8.82 14.79,-14.39 19.6,-14.39 z m -9.1,48.51 c -1.36,2.37 -2.77,4.66 -4.2,6.87 -2.57,0.13 -5.23,0.21 -7.99,0.21 -2.76,0 -5.42,-0.07 -7.99,-0.21 -1.44,-2.21 -2.84,-4.5 -4.2,-6.87 -1.37,-2.4 -2.64,-4.75 -3.81,-7.06 1.19,-2.36 2.46,-4.73 3.81,-7.1 1.36,-2.37 2.77,-4.66 4.2,-6.87 2.57,-0.13 5.23,-0.2 7.99,-0.2 2.76,0 5.42,0.07 7.99,0.2 1.44,2.21 2.84,4.5 4.2,6.87 1.35,2.36 2.61,4.73 3.8,7.08 -1.19,2.36 -2.45,4.72 -3.8,7.08 z m 5.2,-4.22 c 1.57,3.29 2.97,6.54 4.15,9.68 -3.21,0.52 -6.69,0.93 -10.38,1.2 1.09,-1.75 2.16,-3.54 3.23,-5.38 1.06,-1.82 2.05,-3.66 3,-5.5 z m -11.16,13.73 c -2.05,3 -4.14,5.82 -6.23,8.4 -2.09,-2.58 -4.17,-5.41 -6.23,-8.4 2.08,0.08 4.15,0.13 6.23,0.13 2.08,0 4.15,-0.05 6.23,-0.13 z m -17.4,-2.84 c -3.69,-0.28 -7.17,-0.68 -10.38,-1.2 1.18,-3.14 2.58,-6.38 4.15,-9.68 0.96,1.86 1.96,3.69 3,5.5 1.06,1.83 2.13,3.63 3.23,5.38 z m -6.24,-16.59 c -1.62,-3.38 -3.02,-6.63 -4.18,-9.7 3.22,-0.52 6.71,-0.93 10.42,-1.21 -1.1,1.75 -2.17,3.54 -3.23,5.39 -1.06,1.83 -2.05,3.68 -3.01,5.52 z m 11.18,-13.75 c 2.05,-3 4.13,-5.82 6.22,-8.41 2.09,2.58 4.18,5.41 6.23,8.41 -2.07,-0.08 -4.15,-0.13 -6.23,-0.13 -2.07,0 -4.14,0.05 -6.22,0.13 z m 20.63,8.23 c -1.06,-1.85 -2.13,-3.64 -3.23,-5.39 3.69,0.28 7.16,0.69 10.38,1.2 -1.18,3.14 -2.58,6.39 -4.15,9.68 -0.96,-1.83 -1.95,-3.67 -3,-5.49 z M 346.53,8.61 c 0.61,-0.36 1.35,-0.54 2.18,-0.54 4.81,0 12.09,5.57 19.6,14.39 -2.59,3.2 -5.21,6.75 -7.76,10.62 -4.48,0.3 -8.87,0.8 -13.01,1.5 -4.85,-13.73 -4.99,-23.66 -1.01,-25.97 z M 323.06,49.5 c 0,-4.63 8.62,-9.46 22.86,-12.11 1.47,3.95 3.24,8.03 5.22,12.09 -2.03,4.12 -3.8,8.19 -5.27,12.11 -14.21,-2.64 -22.81,-7.47 -22.81,-12.09 z m 25.65,41.43 c -0.84,0 -1.55,-0.18 -2.18,-0.54 -2.99,-1.73 -3.62,-7.69 -1.73,-16.37 0.66,-3.01 1.61,-6.24 2.79,-9.59 4.12,0.7 8.5,1.19 12.96,1.49 2.55,3.87 5.16,7.42 7.76,10.62 -7.51,8.82 -14.79,14.39 -19.6,14.39 z M 395.2,74.02 c 1.89,8.68 1.26,14.64 -1.73,16.37 -0.62,0.35 -1.35,0.54 -2.18,0.54 -4.81,0 -12.09,-5.57 -19.59,-14.39 2.6,-3.2 5.21,-6.76 7.76,-10.62 4.46,-0.3 8.84,-0.8 12.96,-1.49 1.17,3.35 2.13,6.58 2.78,9.59 z m -1.08,-12.43 c -1.46,-3.91 -3.23,-7.97 -5.25,-12.09 2.03,-4.13 3.79,-8.19 5.26,-12.1 14.22,2.65 22.82,7.48 22.82,12.1 -0.01,4.62 -8.61,9.45 -22.83,12.09 z" />
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path12"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 242.89,63.17 -2.39,4.15 24.87,14.27 2.38,-4.14 z" />
+              <ellipse
+                 style="fill:#ffe6cc;stroke:#d79b00"
+                 id="ellipse16"
+                 pointer-events="none"
+                 ry="5.417223"
+                 rx="5.433414"
+                 cy="49.5"
+                 cx="370.5" />
+            </g>
+            <g
+               inkscape:groupmode="layer"
+               id="layer3"
+               inkscape:label="classifications"
+               style="display:inline"
+               class="fragment">
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path18"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 595.35,16.42 5.92,0 c 0.02,-2.36 -0.54,-7.56 5.69,-7.56 4.72,0.01 4.48,4.02 4.48,4.02 0,0 0.19,2.74 -3.8,4.71 -3.62,1.81 -3.96,4.32 -3.96,5.43 l 0,6.97 5.98,0 0,-4.51 c 0.02,-1.69 1.22,-2.61 3.9,-4.55 2.64,-1.92 4.4,-3.77 4.38,-7.95 0.02,-4.14 -4.07,-10.43 -11.57,-10.42 0,0 -5.13,-0.06 -8.09,3.68 -2.93,3.72 -3.08,5.89 -2.93,10.18 l 0,0 z m 14.25,15.75 -5.93,0 0,6.3 5.93,0 0,-6.3 z m 38.58,39.11 c 8.71,-0.01 11.31,-7.21 11.32,-11.35 -0.01,-5.15 -4.41,-10.61 -10.4,-10.61 l -13.88,0 0,-12.06 -62.03,13.23 0,3.44 62.03,12.45 0,-11.48 c 0,0 13.32,-0.02 13.39,0 3.11,-0.02 5.38,3.24 5.4,5.23 -0.01,2.57 -1.52,5.44 -5.4,5.43 0,0 -4.37,-0.43 -4.38,2.71 0.01,3.18 3.33,3 3.95,3.01 l 0,0 z m -76.67,-20.4 0,2.66 -8.96,0 c -1.98,-0.02 -2.05,-2.65 0,-2.66 0.06,-0.02 8.96,0 8.96,0 l 0,0 z m 57.8,32.22 c 0,0 2.6,-0.01 3.36,0 0.74,-0.01 2.29,0.7 2.31,2.13 l 0,12.27 -7.37,-2.13 c 0,0 -40.1,0 -42.24,0 -2.11,0 -2.95,-1.77 -2.93,-2.71 -0.02,-0.97 0.72,-2.76 2.93,-2.77 l 21.29,0 0,-1.27 c 0,0 -19.15,0 -21.29,0 -2.11,0 -2.95,-1.79 -2.93,-2.71 -0.02,-0.97 0.72,-2.71 2.93,-2.72 l 21.29,0 0,-1.16 c 0,0 -19.15,0.01 -21.29,0 -2.11,0.01 -2.95,-1.73 -2.93,-2.66 -0.02,-0.96 0.72,-2.86 2.93,-2.86 l 21.29,0 0,-1.17 -21.29,0 c -2.12,0.02 -2.95,-1.89 -2.93,-2.87 -0.02,-0.93 0.71,-2.76 2.93,-2.76 l 0,0 17.78,0 -5.97,-1.64 c -1.51,-0.54 -2.29,-1.91 -1.87,-3.49 0.43,-1.55 1.72,-2.2 3.89,-1.79 l 35.78,6.97 0,6.97 c -0.02,1.68 -1.14,2.77 -2.36,2.77 l -3.31,0 c -2.12,0.02 -2.12,3.59 0,3.6 l 0,0 z" />
+              <path
+                 style="fill:#ffffff;stroke:#ffb570;stroke-width:2;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path28"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 440.5,49.5 0,-4.5 q 0,-4.5 10,-4.5 l 60,0 q 10,0 10,-10 l 0,-5.5 q 0,-5.5 5.55,2.82 l 8.9,13.36 q 5.55,8.32 0,16.64 l -8.9,13.36 Q 520.5,79.5 520.5,69.5 l 0,-5.5 q 0,-5.5 -10,-5.5 l -60,0 q -10,0 -10,-4.5 z" />
+            </g>
+            <g
+               inkscape:groupmode="layer"
+               id="layer4"
+               inkscape:label="me"
+               style="display:inline"
+               class="fragment">
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path20"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 150.14,251.38 c 1.12,-3.32 2.15,-5.1 2.96,-7.9 0.16,-0.55 4.54,-12.9 23.73,-24.23 3.19,-1.89 15.47,-5.47 18.23,-6.52 0.76,-0.39 1.23,-0.92 1.44,-1.09 1.89,-1.6 4.67,-5.81 7.25,-7.33 3.63,-2.12 6.17,-2.35 8.86,-2.54 2.28,-0.16 6.2,-0.27 10.03,1.24 3.83,1.49 4.92,4.33 5.02,5.27 l 0.23,1.62 c -0.63,0.57 -1.04,1.57 -1.04,2.49 0,0.88 0.53,1.79 0.53,3 0,1.53 -0.59,4.13 -3.19,6.34 -2.98,2.51 -6.89,3.87 -10.28,5.68 -0.05,0.03 -0.12,0.06 -0.19,0.12 -3.51,3 -1.05,6.66 -1.05,6.66 l 19.53,-8.47 c 6.34,-3.25 11.34,-1.6 14.59,3.3 0.23,0.35 0.3,0.46 0.56,0.9 0.15,0.26 0.11,0.62 -0.08,0.77 -0.24,0.2 -0.6,0.05 -0.74,-0.12 -2.37,-3.04 -7.3,-3.45 -9.97,-1.57 -0.14,0.09 -0.27,0.2 -0.41,0.3 -0.47,1.78 -0.11,1.33 -1.08,5.06 -0.59,2.23 -2.54,3.89 -2.54,3.89 0,0 -15.25,14.6 -16.8,16.05 -2.24,2.09 -7.05,3.07 -11.08,1.58 -1.6,-0.59 -5.17,-2.34 -8.63,-3.54 -0.92,-0.32 -1.39,-0.12 -1.98,0.51 -0.87,0.97 -1.5,1.61 -3.43,3.6 -0.44,0.47 -0.55,1.17 0,1.77 l 9.52,10.98 0.06,0.06 c 3.02,3.22 2.84,6.4 1.93,9.48 -0.35,1.24 -1.25,2.74 -2.17,3.55 -0.22,0.21 -0.42,0.15 -0.6,0.06 -0.2,-0.16 -0.16,-0.51 -0.1,-0.69 1.33,-4 0.39,-7.25 -2.97,-8.87 -1.56,0.91 -3.69,2.15 -4.37,2.55 -1.75,1.04 -4.25,0.54 -5.3,0.26 -3.21,-0.86 -17.44,-4.63 -17.44,-4.63 -10.98,-3.18 -12.77,-9.96 -15.6,-13.43 -0.04,-0.05 -0.07,-0.09 -0.1,-0.14 -1.52,0.3 -2.3,0.37 -3.25,-0.43 -1.72,-1.44 -0.7,-3.93 -0.08,-5.59 z m 65.69,-36.58 c -1.94,1.16 -4.88,0.96 -4.88,0.96 0,0 0.72,2.12 3.34,3.39 1.35,0.65 3.03,1.13 5.67,1.06 1.75,-0.05 3.3,-0.99 4.05,-2.15 0.92,-1.41 1.07,-3.09 1.07,-3.09 0,0 -0.87,-0.1 -1.98,-0.63 -1.12,-0.53 -1.46,-2.69 -1.41,-3.73 0.97,-0.1 2.33,-0.09 3.74,0.13 0,0 -0.15,-2.24 -2.04,-2.74 -1.64,-0.43 -1.63,0.5 -3.51,0.49 -0.1,0 -0.3,0 -0.42,0 -0.42,0 -0.94,-0.14 -1.24,-0.24 -1.26,-0.42 -1.85,-0.72 -3.39,-0.66 -1.89,0.08 -4.08,0.43 -4.86,3.16 2.25,-0.34 4.34,-0.49 7.47,-0.2 0.01,1.31 0.32,3.1 -1.61,4.25 z" />
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path22"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 222.07,214.98 c 0.25,0.1 0.42,0.49 0.4,0.76 -0.1,1.14 -0.44,2.26 -1.69,2.38 -1.41,0.14 -1.96,-1.07 -1.89,-2.39 0.01,-0.07 0.03,-0.37 0.17,-0.47 1.35,-1.06 2.54,-0.46 3.01,-0.28 z" />
+            </g>
+            <g
+               inkscape:groupmode="layer"
+               id="layer5"
+               inkscape:label="drinkypoo"
+               style="display:inline"
+               class="fragment">
+              <path
+                 style="fill:#ffe6cc;stroke:#d79b00;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path24"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 473.5,279.59 -23.61,0 0,-33.6 42.61,-52.49 -98,0 43.4,52.23 0,33.86 -23.16,0 c -8.01,0.02 -8.01,11.91 0,11.91 l 58.76,0 c 7.95,0 7.89,-11.89 0,-11.91 z m -29.77,-56.64 c -0.01,-4.18 3.39,-7.57 7.59,-7.57 4.2,0 7.61,3.4 7.59,7.57 0.02,4.21 -3.39,7.6 -7.59,7.57 -4.2,0.03 -7.6,-3.36 -7.59,-7.57 z" />
+              <path
+                 style="fill:#ffffff;stroke:#ffb570;stroke-width:2;stroke-miterlimit:10"
+                 inkscape:connector-curvature="0"
+                 id="path30"
+                 pointer-events="none"
+                 stroke-miterlimit="10"
+                 d="m 279.5,242.5 0,-4.5 q 0,-4.5 10,-4.5 l 60,0 q 10,0 10,-10 l 0,-5.5 q 0,-5.5 5.55,2.82 l 8.9,13.36 q 5.55,8.32 0,16.64 l -8.9,13.36 q -5.55,8.32 -5.55,-1.68 l 0,-5.5 q 0,-5.5 -10,-5.5 l -60,0 q -10,0 -10,-4.5 z" />
+            </g>
+          </svg>
+        </section>
+        <section>
+          <h2>Accuracy</h2>
+          <aside class="notes">
+            The TF tutorial says you should be able to get 90-95% accuracy with only a
+            hundred or so images per category. Which is great, but it means well-defined
+            categories (the example is different kinds of flowers). I wanted to know how
+            well it would perform on more ambiguous categories - I want breach or not-breach.
+          </aside>
+        </section>
+        <section>
+          <h2>Images</h2>
+          <aside class="notes">
+            I had access to a lot of old ad images, but not breaching images. So rather than
+            go searching the naughtier parts of the web for dodgy adverts I came up with a
+            couple of categories that are broad, and ambiguous, and that I could find images
+            for relatively quickly.
+          </aside>
+        </section>
+        <section>
+          <h2>Sports</h2>
+          <section><img src="images/sports/1.jpg"></section>
+          <section><img src="images/sports/2.jpg"></section>
+          <section><img src="images/sports/3.jpg"></section>
+          <section><img src="images/sports/4.jpg"></section>
+          <section><img src="images/sports/5.jpg"></section>
+          <section><img src="images/sports/6.jpg"></section>
+        </section>
+        <section>
+          <h2>Not Sports</h2>
+          <section><img src="images/not-sports/1.jpg"></section>
+          <section><img src="images/not-sports/2.jpg"></section>
+          <section><img src="images/not-sports/3.jpg"></section>
+          <section><img src="images/not-sports/4.jpg"></section>
+          <section><img src="images/not-sports/5.jpg"></section>
+          <section><img src="images/not-sports/6.jpg"></section>
+        </section>
+        <section>
+          <h2>Images</h2>
+          <ul>
+            <li>Sports - 170</li>
+            <li>Not Sports - 230</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Do the thing</h2>
+          <ul>
+            <li class="fragment">Took about 10 minutes</li>
+            <li class="fragment">Accuracy = 76.1%</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Results</h2>
+          <section>
+            <img src="images/results/windsor-business-insurance.jpg">
+            <p>sports = 0.96</p>
+            <p>not-sports = 0.03</p>
+          </section>
+          <section>
+            <img src="images/results/PAFC_NewApp.jpg">
+            <p>sports = 0.93</p>
+            <p>not-sports = 0.07</p>
+          </section>
+          <section>
+            <img src="images/results/nfl.jpg">
+            <p>sports = 0.45</p>
+            <p>not-sports = 0.55</p>
+          </section>
+          <section>
+            <img src="images/results/maltesers.jpg">
+            <p>sports = 0.03</p>
+            <p>not-sports = 0.97</p>
+          </section>
+        </section>
+        <section>
+          <h2>Some sort of conclusion</h2>
+          <aside class="notes">
+            There was a point to all this, wasn't there?
+          </aside>
+        </section>
 
- 					<section>
+ 					<!-- <section>
 
             <h2>Some code</h2>
 						<pre><code data-trim data-noescape class="java">
@@ -504,7 +1277,7 @@ pipeline.run();
               If you're not a Java developer, then you probably don't realise that that's not
               a lot of code.
             </aside>
- 					</section>
+ 					</section> -->
 
 				<!--
 					************ That's all folks ***************
@@ -515,20 +1288,12 @@ pipeline.run();
 						<img src="images/lone-ranger.jpg" width="20%" style="float:left;margin-left:20%;">
 						<p>
 							Gareth Jones<br>
+              <!-- <a href="http://www.shinesolutions.com">http://www.shinesolutions.com</a><br> -->
               <a href="https://twitter.com/nomiddlename">@nomiddlename</a><br>
 						</p>
 					</div>
 				</section>
 
-        <section data-background-color="#ffffff">
-          <h1 class="grey">Panel Discussion</h1>
-          <img src="images/gdg-cloud.png">
-        </section>
-        <section data-background-color="#ffffff">
-          <h1 class="grey">Feedback</h1>
-          <h2 class="grey">https://goo.gl/4AxPQt</h2>
-          <img src="images/gdg-cloud.png">
-        </section>
 			</section>
 			</div>
 		</div>
