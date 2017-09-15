@@ -72,6 +72,16 @@
           <img src="images/dammit-jim.jpg">
         </section>
         <section>
+          <h2>What I'm going to talk about</h2>
+          <ul>
+            <li class="fragment">Serving Ads</li>
+            <li class="fragment">POC (Cloud Vision API)</li>
+            <li class="fragment">POC (Tensorflow)</li>
+            <li class="fragment">Summary</li>
+            <li class="fragment">Dance Number</li>
+          </ul>
+        </section>
+        <section>
           <h2>Serving Ads</h2>
           <aside class="notes">
             One of our clients is a major telecommunications company, and we help them run their
@@ -480,6 +490,12 @@
         </section>
         <section>
           <h2>Ad Breaches</h2>
+          <ul>
+            <li class="fragment">Untargeted ads</li>
+            <li class="fragment">Algorithmic selection</li>
+            <li class="fragment">Third-party Ad Networks</li>
+            <li class="fragment">Human error</li>
+          </ul>
           <aside class="notes">
             It's that last class of ads that cause the problems. They're not going to be relevant to a lot
             of the audience, and in the worst case they could be offensive or harmful to the site's brand.
@@ -489,17 +505,92 @@
         </section>
         <section>
           <h2>Now</h2>
-          <ul>
+          <ol>
             <li class="fragment">Complaint</li>
             <li class="fragment">Panic</li>
             <li class="fragment">Fixed</li>
-          </ul>
+          </ol>
           <aside class="notes">
             Sites provide a list of categories to exclude. Doesn't always work, it relies on the people
             setting up the ads to use the right categories. Usually the first we will hear of an ad breach
             is a complaint, or an embarrassing social media post. At best it will be an email from an internal
             user. The next step in the process is for lots of people to panic. Once we get to this stage fixing
             it is quite a quick process. But it's the finding out part that we want to improve.
+          </aside>
+        </section>
+        <section>
+          <h2>What we want</h2>
+          <ol>
+            <li class="fragment">Detection</li>
+            <li class="fragment">Fixed</li>
+          </ol>
+          <aside class="notes">
+            We want to get rid of the human factors in this process. It's time to call in our robot
+            overlords for help.
+          </aside>
+        </section>
+        <section>
+          <h2>Why Google Cloud Vision?</h2>
+          <ul>
+            <li class="fragment">Image Recognition is just not our bag, man.</li>
+            <li class="fragment">Managed service</li>
+            <li class="fragment">OCR, Logo detection</li>
+            <li class="fragment">Objects, faces, landmarks</li>
+            <li class="fragment">Inappropriate content</li>
+          </ul>
+          <aside class="notes">
+            If someone has already built a useful service, you'd be crazy not to give it a try.
+          </aside>
+        </section>
+        <section>
+          <h2>Example</h2>
+          <img src="images/sports/3.jpg">
+          <aside class="notes">
+            I'm going to show you the kinds of output you get from the Cloud Vision API.
+            You make a HTTP request telling the API where to find your image.
+            You get a JSON response with all sorts of information about your image.
+          </aside>
+        </section>
+        <section>
+          <h2>Face Detection</h2>
+          <img src="images/face-detection.png">
+          <aside class="notes">
+            not used in our code, but interesting
+          </aside>
+        </section>
+        <section>
+          <h2>Labels</h2>
+          <img src="images/labels.png">
+          <aside class="notes">
+            tries to identify objects and concepts in the Image
+          </aside>
+        </section>
+        <section>
+          <h2>Logos</h2>
+          <img src="images/logos.png">
+          <aside class="notes">
+            picks out logos in the images
+          </aside>
+        </section>
+        <section>
+          <h2>Web</h2>
+          <img src="images/web.png">
+          <aside class="notes">
+            it'll provide you with links to web entities, not used by us
+          </aside>
+        </section>
+        <section>
+          <h2>Text</h2>
+          <img src="images/text.png">
+          <aside class="notes">
+            This is the useful one for us, the text extraction
+          </aside>
+        </section>
+        <section>
+          <h2>Inappropriate Content</h2>
+          <img src="images/safe-search.png">
+          <aside class="notes">
+            I'm not going to test this, but you can see here that this image is safe.
           </aside>
         </section>
         <section>
@@ -578,7 +669,7 @@
                  pointer-events="none"
                  ry="7.1999998"
                  rx="7.1999998"
-                 height="48"
+                 height="28"
                  width="106"
                  y="110.5"
                  x="0.5" />
@@ -596,7 +687,7 @@
                     <xhtml:div
                        style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(255, 153, 51); line-height: 1.2; vertical-align: top; width: 102px; white-space: normal; word-wrap: normal; text-align: center;">
                       <xhtml:div
-                         style="display:inline-block;text-align:inherit;text-decoration:inherit;">Headless Browser</xhtml:div>
+                         style="display:inline-block;text-align:inherit;text-decoration:inherit;">Browser</xhtml:div>
                     </xhtml:div>
                   </foreignObject>
                   <text
@@ -604,7 +695,7 @@
                      id="text42"
                      font-size="18px"
                      y="29"
-                     x="51">Headless Browser</text>
+                     x="51">Browser</text>
                 </switch>
               </g>
             </g>
@@ -633,13 +724,13 @@
                  pointer-events="none"
                  ry="3"
                  rx="3"
-                 height="20"
+                 height="28"
                  width="130"
-                 y="122.5"
+                 y="110.5"
                  x="243.5" />
               <g
                  id="g46"
-                 transform="translate(262,123)">
+                 transform="translate(262,114)">
                 <switch
                    id="switch48">
                   <foreignObject
@@ -847,121 +938,27 @@
           </aside>
         </section>
         <section>
-          <h2>Google Cloud Vision</h2>
-          <ul>
-            <li class="fragment">Managed service</li>
-            <li class="fragment">OCR, Logo detection</li>
-            <li class="fragment">Objects, faces, landmarks</li>
-            <li class="fragment">Inappropriate content</li>
-          </ul>
-        </section>
-        <section>
-          <h2>HTTP Request</h2>
-          <aside class="notes">
-            an example http request showing ocr, logo and object detection
-          </aside>
-        </section>
-        <section>
-          <h2>Example Screenshot</h2>
-          <img src="images/poc-screenshot.jpg">
-          <aside class="notes">
-            an example of a typical ad breach test screenshot
-          </aside>
-        </section>
-        <section>
-          <h2>HTTP Response</h2>
-          <pre><code data-trim data-noescape class="json">
-            {
-              "faceAnnotations": [
-                {
-                  "boundingPoly": {
-                    "vertices": [
-                      {
-                        "x": 307,
-                        "y": 921
-                      },
-                      {
-                        "x": 364,
-                        "y": 921
-                      },
-                      ...
-</code></pre>
-          <aside class="notes">
-            an example of the kind of response you get back
-          </aside>
-        </section>
-        <section>
-          <h2>Face Detection</h2>
-          <img src="images/face-recognition.png">
-          <aside class="notes">
-            not used in our code, but interesting
-          </aside>
-        </section>
-        <section>
-          <h2>Inappropriate Content</h2>
-          <img src="images/safe-search.png">
-          <aside class="notes">
-            I'm not going to test this, but you can see here that this image is safe.
-          </aside>
-        </section>
-        <section>
-          <h2>OCR</h2>
-          <img src="images/ocr.png">
-          <aside class="notes">
-            Show the text found in the Image
-          </aside>
-        </section>
-        <section>
           <h2>Keywords</h2>
+          <ul>
+            <li class="fragment">Error-prone</li>
+            <li class="fragment">Manual</li>
+          </ul>
           <aside class="notes">
             We set up a list of keywords that would trigger an alert if any of them were found
             in the response from the Cloud Vision API.
           </aside>
         </section>
         <section>
-          <h2>Cloud Vision Advantages</h2>
-          <ul>
-            <li class="fragment">managed</li>
-            <li class="fragment">expertise</li>
-            <li class="fragment">easy</li>
-          </ul>
-          <aside class="notes">
-            There's no servers to set up or look after.
-            Same technology that google uses in safe search, run by people much smarter than me.
-            Probably smarter than you, too.
-            It's easy - a http request and you're done.
-          </aside>
-        </section>
-        <section>
-          <h2>Cloud Vision Disadvantages</h2>
-          <ul>
-            <li class="fragment">Cost</li>
-            <li class="fragment">Not flexible</li>
-            <li class="fragment">Can't be used offline</li>
-          </ul>
-          <aside class="notes">
-            It's cheap, but costs can mount up - cost calc for the POC goes here
-          </aside>
-        </section>
-        <section>
-          <h2>POC Problems</h2>
-          <ul>
-            <li class="fragment">Cost</li>
-            <li class="fragment">Keywords</li>
-          </ul>
-          <aside class="notes">
-            For one site, and a very coarse sampling rate, it's not so bad. [calculations]
-            Relies on us using the same keywords as Google, and that Google have all the logos
-            and brand images of Australian companies.
-          </aside>
-        </section>
-        <section>
           <h2>Solution</h2>
-          <p>Train our own image classifier!</p>
+          <p>Make our own image classifier!</p>
+          <p>How hard can it be?</p>
         </section>
         <section>
           <h2>Too Hard</h2>
           <p>It'll take weeks and millions of images</p>
+          <aside class="notes">
+            Turns out it's really hard. Way too hard for someone like me.
+          </aside>
         </section>
         <section>
           <h2>Give Up!</h2>
@@ -972,12 +969,19 @@
         <section>
           <h2>Steal<sup>*</sup> Someone Else's Work!</h2>
           <p class="fragment"><sup>*</sup>Make use of work freely given for the advancement of humanity</p>
+          <p class="fragment">(transfer learning)</p>
           <aside class="notes">
-            A much better idea.
+            So I found out about this idea of transfer learning - where you take a model that's been
+            trained on a certain class of problems and re-use it on a different problem.
           </aside>
         </section>
         <section>
           <h2>Tensorflow</h2>
+          <ul>
+            <li class="fragment">Machine learning toolkit</li>
+            <li class="fragment">Open-source</li>
+            <li class="fragment">Has pre-trained models</li>
+          </ul>
           <aside class="notes">
             Tensorflow - open source machine learning library. Backed by Google, other libraries
             are out there. Keras can use tensorflow as a backend. Comes with support for a few
@@ -996,10 +1000,21 @@
         </section>
         <section>
           <h2>How to do it</h2>
-          <p class="fragment">
-            <img src="images/tutorial.png">
-            <a href="https://www.tensorflow.org/tutorials/image_retraining">https://www.tensorflow.org/tutorials/image_retraining</a>
-          </p>
+          <section>
+            <p class="fragment">
+              <img src="images/tutorial.png">
+              <a href="https://www.tensorflow.org/tutorials/image_retraining">https://www.tensorflow.org/tutorials/image_retraining</a>
+            </p>
+          </section>
+          <section>
+            <ol>
+              <li class="fragment">Download TF source</li>
+              <li class="fragment">Compile</li>
+              <li class="fragment">Put images into folders named by category</li>
+              <li class="fragment">Run the tutorial code</li>
+              <li class="fragment">That's it.</li>
+            </ol>
+          </section>
         </section>
         <section>
           <h3>Simpler Diagram</h3>
@@ -1173,25 +1188,26 @@
           </svg>
         </section>
         <section>
-          <h2>Accuracy</h2>
-          <aside class="notes">
-            The TF tutorial says you should be able to get 90-95% accuracy with only a
-            hundred or so images per category. Which is great, but it means well-defined
-            categories (the example is different kinds of flowers). I wanted to know how
-            well it would perform on more ambiguous categories - I want breach or not-breach.
-          </aside>
-        </section>
-        <section>
           <h2>Images</h2>
+          <ul>
+            <li class="fragment">Sports - 170</li>
+            <li class="fragment">Not Sports - 230</li>
+          </ul>
           <aside class="notes">
             I had access to a lot of old ad images, but not breaching images. So rather than
             go searching the naughtier parts of the web for dodgy adverts I came up with a
             couple of categories that are broad, and ambiguous, and that I could find images
             for relatively quickly.
+            The model will split this set of images into a training, test, validation set. I think the
+            default is a 80/10/10 split.
           </aside>
         </section>
         <section>
           <h2>Sports</h2>
+          <aside class="notes">
+            These are a sample of some of the images used to train the model.
+            Just so you can get an idea of what the categories look like.
+          </aside>
           <section><img src="images/sports/1.jpg"></section>
           <section><img src="images/sports/2.jpg"></section>
           <section><img src="images/sports/3.jpg"></section>
@@ -1209,21 +1225,23 @@
           <section><img src="images/not-sports/6.jpg"></section>
         </section>
         <section>
-          <h2>Images</h2>
-          <ul>
-            <li>Sports - 170</li>
-            <li>Not Sports - 230</li>
-          </ul>
-        </section>
-        <section>
           <h2>Do the thing</h2>
           <ul>
             <li class="fragment">Took about 10 minutes</li>
             <li class="fragment">Accuracy = 76.1%</li>
           </ul>
+          <aside class="notes">
+            The TF tutorial says you should be able to get 90-95% accuracy with only a
+            hundred or so images per category. Which is great, but it means well-defined
+            categories (the example is different kinds of flowers). I wanted to know how
+            well it would perform on more ambiguous categories - I want breach or not-breach.
+          </aside>
         </section>
         <section>
           <h2>Results</h2>
+          <aside class="notes">
+            These are images that were not included in the training or test set.
+          </aside>
           <section>
             <img src="images/results/windsor-business-insurance.jpg">
             <p>sports = 0.96</p>
@@ -1246,38 +1264,24 @@
           </section>
         </section>
         <section>
-          <h2>Some sort of conclusion</h2>
-          <aside class="notes">
-            There was a point to all this, wasn't there?
-          </aside>
+          <h2>Is it over yet?</h2>
+          <ul>
+            <li class="fragment">Cloud Vision API
+              <ul>
+                <li class="fragment">Easy</li>
+                <li class="fragment">Managed</li>
+                <li class="fragment">Always improving</li>
+              </ul>
+            </li>
+            <li class="fragment">Rolling your own image classifier
+              <ul>
+                <li class="fragment">Easy</li>
+                <li class="fragment">Quick</li>
+                <li class="fragment">Customisable</li>
+              </ul>
+            </li>
+          </ul>
         </section>
-
- 					<!-- <section>
-
-            <h2>Some code</h2>
-						<pre><code data-trim data-noescape class="java">
-Pipeline pipeline = Pipeline.create(options);
-pipeline.apply(BigQueryIO.read().from(BIG_QUERY_TABLE))
-        .apply(ParDo.of(new DoFn<TableRow, String>() {
-            @ProcessElement
-            public void processElement(ProcessContext c) throws Exception {
-                TableRow inputRow = c.element();
-                String title = (String) inputRow.get("title");
-                if ((title).contains("elbourne"))
-                    c.output(title);
-            }
-        }))
-        .apply(TextIO.write().to(BUCKET)
-                .withoutSharding()
-                .withSuffix(".csv"));
-pipeline.run();
-</code></pre>
- 						<aside class="notes">
-              Here's some code. It's mainly there to show you that there's not a lot of it.
-              If you're not a Java developer, then you probably don't realise that that's not
-              a lot of code.
-            </aside>
- 					</section> -->
 
 				<!--
 					************ That's all folks ***************
